@@ -186,6 +186,8 @@ Keep in mind that many of these were recorded when Fabric was Python-based, so r
     - [`to_pdf`](#to_pdf)
     - [`to_pdf` Installation](#to_pdf-installation)
     - [`code_helper`](#code_helper)
+    - [`voltagent`](#voltagent)
+    - [`voltagent` Installation](#voltagent-installation)
   - [pbpaste](#pbpaste)
   - [Web Interface (Fabric Web App)](#web-interface-fabric-web-app)
   - [Meta](#meta)
@@ -915,6 +917,30 @@ Install it first using:
 
 ```bash
 go install github.com/danielmiessler/fabric/cmd/code_helper@latest
+```
+
+### `voltagent`
+
+`voltagent` is a utility for validating and checking Fabric configurations. It helps ensure your Fabric setup is correct and all patterns are valid.
+
+You can use it to check your configuration:
+
+```bash
+voltagent
+```
+
+Or validate all pattern files:
+
+```bash
+voltagent --check-patterns
+```
+
+### `voltagent` Installation
+
+To install `voltagent`, install it the same way as you install Fabric:
+
+```bash
+go install github.com/danielmiessler/fabric/cmd/voltagent@latest
 ```
 
 ## pbpaste
