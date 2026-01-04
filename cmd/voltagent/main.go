@@ -4,9 +4,10 @@
 //   voltagent [options]
 //
 // Examples:
-//   voltagent                    # Check current Fabric configuration
-//   voltagent --version          # Show version
-//   voltagent --check-patterns   # Validate pattern files
+//   voltagent                                  # Check current Fabric configuration
+//   voltagent --version                        # Show version
+//   voltagent --check-patterns                 # Validate pattern files
+//   voltagent --config /path/to/fabric         # Check specific config directory
 //
 // Description:
 //   voltagent is a helper tool for the Fabric AI framework that validates
@@ -22,7 +23,7 @@ import (
 	"strings"
 )
 
-const version = "1.0.0"
+var version = "v1.0.0"
 
 func main() {
 	// Define command-line flags
@@ -129,7 +130,7 @@ func countPatterns(patternsDir string) int {
 
 func checkPatternFiles(configDir string) {
 	patternsDir := filepath.Join(configDir, "patterns")
-	
+
 	fmt.Printf("Validating pattern files in: %s\n\n", patternsDir)
 
 	if _, err := os.Stat(patternsDir); os.IsNotExist(err) {
@@ -188,6 +189,6 @@ func checkPatternFiles(configDir string) {
 	if invalidPatterns > 0 {
 		os.Exit(1)
 	}
-	
+
 	fmt.Printf("\n✅ All patterns validated successfully\n")
 }
